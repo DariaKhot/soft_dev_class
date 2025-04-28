@@ -1,56 +1,46 @@
+/* Color Theme */
 :root {
   --primarycolor: #83cde8;
   --secondarycolor: #012a4a;
   --primarylightcolor: #d1f4fc;
 }
 
+/* General Page Settings */
 body {
   background-color: var(--primarycolor);
   color: var(--secondarycolor);
   font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-header {
+/* Header / Navbar */
+.navbar {
   background-color: #0077b6;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 24px;
   color: white;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  margin-bottom: 1rem;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-  flex-wrap: wrap;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav a {
-  color: #e0f7fa;
-  text-decoration: none;
+.nav-link {
+  color: #e0f7fa !important;
   font-weight: 600;
 }
 
-nav a:hover {
-  color: #90e0ef;
+.nav-link:hover {
+  color: #90e0ef !important;
 }
 
+/* Intro Section */
 .intro {
   padding: 2rem 1rem;
   background-color: #eafcff;
 }
 
+/* Carousel */
 .carousel img {
   height: 500px;
   width: 100%;
@@ -59,13 +49,21 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.intro p {
+/* Modal */
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Paragraphs */
+.intro p, p {
   color: #023047;
   font-size: 1.15rem;
   max-width: 800px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* Sections */
 section {
   padding: 2rem 1rem;
   border-bottom: 1px solid #d0eaff;
@@ -73,10 +71,63 @@ section {
 
 section h2 {
   color: #005f8e;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-outline-dark {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #004d40;
+  color: white;
+  transform: scale(1.1); /* Animation */
+}
+
+/* 2D Animation for Sections */
+section:hover {
+  background-color: #b2ebf2;
+  transition: background-color 0.5s ease;
+}
+
+/* Footer */
+footer {
+  background-color: #004d40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .carousel img {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 576px) {
-  header h1 {
+  header h1, .navbar-brand {
     font-size: 1.4rem;
   }
 
@@ -87,5 +138,9 @@ section h2 {
 
   .lead {
     font-size: 1rem;
+  }
+
+  .carousel img {
+    height: 200px;
   }
 }
