@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta charset="UTF-8">
+    <title>Flask App</title>
+</head>
+<body>
+    <h1 class="title">Welcome to Flask! {{username}}</h1>
+    <figure class="introimgcontainer">
+        <img src="../static/waterfall.jpg" class="introimg" alt="waterfall">
+    </figure>
+    <section class="maincontainer">
+      <ul>
+        {% for eachfruit in listfruits %}
+          <li>{{eachfruit}}</li>
+        {% endfor %}
+      </ul>
+  
+      {%if checkfruit in listfruits%}
+        <p>Great! We have {{checkfruit}} today</p>
+      {% else %}
+        <p>{{checkfruit}} is not in the list</p>
+      {% endif%}
+    </section>
+  </body>
+  </html>
+  
