@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../static/style.css">
-    <meta charset="UTF-8">
-    <title>Flask App</title>
-</head>
-<body>
-    <h1 class="title">Welcome to Flask! </h1>
-
-  </body>
-  </html>
-  
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Product Categories</h2>
+<ul>
+    {% for category in categories %}
+        <li><a href="{{ url_for('show_category', category=category) }}">{{ category }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

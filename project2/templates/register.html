@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Register Here{% endblock %}</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h2>Register</h2>
+<form method="POST">
+    <input name="first_name" placeholder="First Name" required><br>
+    <input name="last_name" placeholder="Last Name" required><br>
+    <input name="username" placeholder="Username" required><br>
+    <input name="email" type="email" placeholder="Email" required><br>
+    <input name="address" placeholder="Address"><br>
+    <input name="password" type="password" placeholder="Password" required><br>
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<h2>Checkout</h2>
+<ul>
+    {% for item in items %}
+        <li>{{ item.name }} - {{ item.quantity }} x ${{ item.price }}</li>
+    {% endfor %}
+</ul>
+<p>Subtotal: ${{ total }}</p>
+<p>Tax: ${{ tax }}</p>
+<p>Shipping: ${{ shipping }}</p>
+<p><strong>Total: ${{ grand_total }}</strong></p>
+<form method="POST">
+    <button type="submit">Submit Order</button>
+</form>
+{% endblock %}
