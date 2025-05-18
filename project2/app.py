@@ -95,7 +95,7 @@ def remove_from_cart(product_id):
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        # Check for duplicate username or email
+        # Check for duplicate username or email (validation)
         if User.query.filter_by(username=request.form['username']).first() or User.query.filter_by(email=request.form['email']).first():
             flash("Username or Email already taken.")
             return redirect(url_for('register'))
