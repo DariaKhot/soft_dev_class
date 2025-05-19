@@ -1,10 +1,32 @@
-{% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% extends "base.html" %}
 {% block content %}
-<h2>Product Categories</h2>
-<ul>
-    {% for category in categories %}
-        <li><a href="{{ url_for('show_category', category=category) }}">{{ category }}</a></li>
-    {% endfor %}
-</ul>
+<div class="container">
+  <h2 class="my-4 text-center">Product Categories</h2>
+
+  <div class="row">
+    <!-- Skincare Category Card -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100 shadow">
+        <img src="{{ url_for('static', filename='images/face_oil.jpg') }}" class="card-img-top img-fluid" alt="Skincare" style="height: 300px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Skincare</h5>
+          <p class="card-text">Keep your skin radiant with our top skincare products.</p>
+          <a href="{{ url_for('show_category', category='Skincare') }}" class="btn btn-primary">Shop Skincare</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perfume Category Card -->
+    <div class="col-md-6 mb-4">
+      <div class="card h-100 shadow">
+        <img src="{{ url_for('static', filename='images/jadore.jpg') }}" class="card-img-top img-fluid" alt="Perfume" style="height: 300px; object-fit: cover;">
+        <div class="card-body text-center">
+          <h5 class="card-title">Perfume</h5>
+          <p class="card-text">Discover elegant fragrances for every occasion.</p>
+          <a href="{{ url_for('show_category', category='Perfume') }}" class="btn btn-primary">Shop Perfume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
